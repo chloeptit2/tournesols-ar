@@ -21,5 +21,6 @@ t.addEventListener('targetFound',()=>{if(v.style.display==='block')return;show(t
 t.addEventListener('targetLost',()=>{if(v.style.display!=='block')hint.style.opacity=1;});
 v.addEventListener('ended',()=>show(false));
 document.body.addEventListener('click',()=>{if(v.style.display==='block'&&v.paused)v.play().catch(()=>{});});
+window.addEventListener('orientationchange',()=>{[300,800].forEach(d=>setTimeout(()=>window.dispatchEvent(new Event('resize')),d));});
 document.querySelector('a-scene').addEventListener('arError',()=>{document.getElementById('err').style.display='flex';});
 </script></body></html>
